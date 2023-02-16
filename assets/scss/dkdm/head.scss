@@ -1,4 +1,4 @@
-.head-block {
+.head {
     margin-top: 143px;
 
     &__content {
@@ -8,7 +8,31 @@
     }
 
     &__dot {
-        color: #FF0000;
+        position: relative;
+        padding: 0 10px;
+
+        &::before {
+            content: "";
+            background-color: #FF0000;
+            display: block;
+            margin-top: 13px;
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            animation: pulse .7s infinite ease-out;
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        75% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
 
     &__star {
@@ -53,6 +77,7 @@
     p {
         color: white;
         margin-bottom: 41px;
+        display: flex;
     }
 
     .button {

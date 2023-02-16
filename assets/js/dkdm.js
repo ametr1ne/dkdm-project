@@ -10,13 +10,21 @@ $('#portfolio-slider').owlCarousel({
 // program course accordeon
 
 $('.program-item__header').on('click', function() {
+    let height = $(this).next().find('ul')[0].clientHeight + 10
+
+    if ($(this).parent().hasClass('list--opened')) {
+        $(this).next().css('max-height', "0");
+    } else {
+        $(this).next().css('max-height', height + "px");
+    }
+    
     $(this).parent().toggleClass('list--opened')
 })
 
 // parallax
 
 const rotatingStar = document.getElementById('rotating-star')
-const headBlock = $('.head-block')
+const headBlock = $('.head')
 
 window.addEventListener("scroll", function() {
     if (window.pageYOffset < 1200) {
@@ -25,8 +33,8 @@ window.addEventListener("scroll", function() {
     }
 });
 
-const headCard1 = document.querySelector('.head-block__card_card1')
-const headCard2 = document.querySelector('.head-block__card_card2')
+const headCard1 = document.querySelector('.head__card_card1')
+const headCard2 = document.querySelector('.head__card_card2')
 
 window.addEventListener("scroll", function() {
     if (window.pageYOffset < 1400) {
@@ -37,3 +45,48 @@ window.addEventListener("scroll", function() {
     }
 });
 
+// inputs 
+
+const input = $('.input')
+
+function inputs() {
+    input.on('focus', function () {
+        $(this).next().addClass('label_active')
+    })
+
+    input.on('blur', function () {
+        if ($(this).val().length < 1) {
+            $(this).next().removeClass('label_active');
+        }
+    });
+}
+
+$(document).ready(function () {
+
+    $(input).each(function () {
+        if ($(this).val().length < 1) {
+            $(this).next().removeClass('label_active');
+        } else {
+            $(this).next().addClass('label_active');
+        }
+    })
+
+    inputs()
+})
+
+// smooth scroll
+
+$(document).ready(function(){
+    $("a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+  
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          window.location.hash = hash;
+        });
+      } 
+    });
+  });

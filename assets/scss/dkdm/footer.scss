@@ -1,0 +1,42 @@
+.footer {
+    width: 100%;
+    background: white;
+    padding: 50px 70px 53px;
+
+    a, p {
+        font-size: 19px;
+        line-height: 130%;
+        color: #9090A9;
+    }
+
+    p {
+        padding-right: 15px;
+    }
+
+    &__links {
+        display: flex;
+        grid-column-gap: 30px;
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .juri-name {
+            display: flex;
+            align-items: center;
+
+            svg {
+                margin-right: 19px;
+                margin-top: -4px;
+            }
+        }
+    }
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 24px;
+    }
+}

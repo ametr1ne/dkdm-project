@@ -24,6 +24,12 @@
         line-height: 130%;
         text-align: center;
 
-        color: #FFFFFF;
+        color: #8C92FF;
+
+        transition: color .4s;
+
+        &:hover {
+            color: white;
+        }
     }
 }

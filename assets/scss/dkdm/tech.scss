@@ -1,4 +1,4 @@
-.tech-block {
+.tech {
     &__content {
         display: flex;
         flex-direction: column;
@@ -7,6 +7,17 @@
 
     &__imgbox { 
         margin-bottom: 30px;
+        position: relative;
+
+        .interactive-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .img-4 {
+            z-index: -1;
+        }
     }
 
     &__items {
