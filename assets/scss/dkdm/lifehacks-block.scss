@@ -1,0 +1,31 @@
+.lifehacks-block {
+    margin-top: 100px;
+
+    &__img1 {
+        margin-bottom: 70px;
+    }
+
+    &__imgs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 55px;
+
+        img {
+            object-fit: contain;
+            display: flex;
+            align-self: flex-start;
+
+            &:nth-child(1) {
+                margin-top: 115px;
+                margin-right: -55px;
+            }
+            &:nth-child(2) {
+                filter: drop-shadow(-20px 40px 50px rgba(0, 24, 84, 0.15));
+            }
+        }
+    }
+
+    .button {
+        margin: 0 auto;
+    }
+}

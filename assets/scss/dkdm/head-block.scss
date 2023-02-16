@@ -1,0 +1,75 @@
+.head-block {
+    margin-top: 143px;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__dot {
+        color: #FF0000;
+    }
+
+    &__star {
+        z-index: -1;
+        position: absolute;
+        top: -40%;
+
+        transition: transform .7s ease-out;
+    }
+
+    &__imgs {
+        margin-bottom: 20px;
+
+        img {
+            position: relative;
+
+            &:not(:last-child) {
+                margin-right: -20px;
+            }
+
+            &:first-child {
+                z-index: 2;
+            }
+            &:nth-child(2) {
+                z-index: 1;
+            }
+        }
+
+
+    }
+
+    &__title {
+        font-family: 'Dela Gothic One', cursive;
+        color: white;
+        font-weight: 400;
+        font-size: 55px;
+        line-height: 60px;
+        margin-bottom: 39px;
+        text-align: center;
+    }
+
+    p {
+        color: white;
+        margin-bottom: 41px;
+    }
+
+    .button {
+        margin-bottom: 80px;
+    }
+
+    &__cards {
+        display: flex;
+
+        img {
+            object-fit: contain;
+            transition: transform .7s ease-out;
+
+            &:nth-child(1) {
+                margin-top: 65px;
+                margin-right: -160px;
+            }
+        }
+    }
+}

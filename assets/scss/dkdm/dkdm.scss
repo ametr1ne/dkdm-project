@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Dela Gothic One';
+    src: url('../../fonts/DelaGothicOne-Regular.woff2') format('woff2'),
+        url('../../fonts/DelaGothicOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Proxima Nova", sans-serif;
+    background: #F8F9FE;
+}
+
+p {
+    font-size: 25px;
+    letter-spacing: -0.02em;
+    line-height: 120%;
+}
+
+.wrapper {
+    max-width: 740px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+section {
+    margin-top: 80px;
+}
+
+.red-btn {
+    background: #FF0000;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    color: white;
+    border-radius: 100px;
+    padding: 0 140px;
+    height: 74px;
+    max-width: 465px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(-20px 40px 50px rgba(255, 0, 0, 0.8));
+}
+
+.block-title {
+    font-family: 'Dela Gothic One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 110%;
+
+    text-align: center;
+
+    color: #000000;
+    margin-bottom: 26px;
+}
+
+.block-description {
+    color: #8082AA;
+    text-align: center;
+    margin-bottom: 33px;
+}

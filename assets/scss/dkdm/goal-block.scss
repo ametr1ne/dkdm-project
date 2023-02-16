@@ -1,0 +1,15 @@
+.goal-block {
+    margin-top: 80px;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img {
+            object-fit: contain;
+            width: 586px;
+            margin: 0 auto;
+        }
+    }
+}
