@@ -817,7 +817,7 @@ section {
   background: #ffffff;
   color: #8082AA;
   position: absolute;
-  top: 14.5px;
+  top: 15.5px;
   font-size: 25px;
   left: 53px;
   padding-right: 5px;
@@ -870,6 +870,12 @@ section {
 .footer__links {
   display: flex;
   grid-column-gap: 30px;
+}
+.footer__links a {
+  transition: color 0.4s;
+}
+.footer__links a:hover {
+  color: #0067ff;
 }
 .footer .top {
   display: flex;

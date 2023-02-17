@@ -16,6 +16,13 @@
     &__links {
         display: flex;
         grid-column-gap: 30px;
+
+        a {
+            transition: color .4s;
+            &:hover {
+                color: #0067ff;
+            }
+        }
     }
 
     .top {

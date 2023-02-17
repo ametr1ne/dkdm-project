@@ -28,14 +28,15 @@ for(i=1;i<=10;i++){
 
 // portfolio slider
 
-$('#portfolio-slider').owlCarousel({
+const slider = tns({
+    container: '.portfolio__slider',
     items: 3,
-    margin: 30,
-    loop: true,
+    fixedWidth: 400,
+    gutter: 20,
     center: true,
-    autoWidth: true,
-    stagePadding: 20
-})
+    controls: false,
+    mouseDrag: true
+});
 
 // program course accordeon
 
@@ -201,6 +202,8 @@ $(document).ready(function(){
         autoPlaceholder: 'aggressive',
         nationalMode: false
     })
+
+    $('.fake-code').text("+7 ")
 
     $(phoneinput).on('input keyup', function () {
         phoneinput.value = phoneinput.value.replace(/[^\d()+]+$/, '')
