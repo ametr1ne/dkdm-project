@@ -12,6 +12,7 @@
                 padding: 19px 0;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 cursor: pointer;
             }
 
@@ -36,12 +37,14 @@
 
                 ul {
                     padding-bottom: 20px;
+                    padding-left: 10px;
                     li {
                         font-size: 18px;
                         line-height: 120%;
                         letter-spacing: -0.02em;
                         position: relative;
-                        padding-left: 20px;
+                        padding-left: 15px;
+                        color: #8082AA;
 
                         &:not(:last-child) {
                             margin-bottom: 5px;
@@ -55,7 +58,7 @@
                             left: 0;
                             width: 4px;
                             height: 4px;
-                            background: black;
+                            background: #8082AA;
                             border-radius: 50%;
                         }
                     }

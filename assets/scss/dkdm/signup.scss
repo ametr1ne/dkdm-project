@@ -4,6 +4,10 @@
     &__block-description {
         font-size: 30px;
         line-height: 130%;
+        max-width: 570px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .form-wrap {
@@ -37,19 +41,31 @@
                     border-radius: 50%;
                     height: 45px;
                     width: 45px;
-                    box-shadow: 2px 4px 10px rgba(128, 130, 170, 0.3);
+                    border: 2px solid #FFFFFF;
+                    opacity: 0;
+                    transform: scale(0);
+                    transition: opacity .4s, transform .4s;
 
                     &:not(:last-child) {
                         margin-right: -10px;
+                        box-shadow: 2px 4px 10px rgba(128, 130, 170, 0.3);
                     }
 
                     &_last {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        background-color: white;
-                        font-weight: 700;
+                        background-color: #9090A9;
+                        font-size: 14px;
+                        line-height: 140%;
+                        letter-spacing: -0.02em;
+                        color: white;
                     }
+                }
+
+                .bubble-loaded {
+                    opacity: 1;
+                    transform: scale(1);
                 }
             }
 
@@ -69,14 +85,15 @@
             display: flex;
             flex-direction: column;
             margin-bottom: 41px;
+            position: relative;
         }
 
         .tariff1-radio {
-            width: 0;
-            height: 0;
+            // width: 0;
+            // height: 0;
             position: absolute;
             opacity: 0;
-            z-index: -1;
+            // z-index: -1;
         }
 
         .tariff1-radio:checked {
@@ -89,6 +106,15 @@
                     }
                 }
             }
+        }
+
+        span.error {
+            color: red;
+            font-size: 14px;
+            line-height: 110%;
+            position: absolute;
+            top: 105%;
+            right: 0;
         }
 
         .tariff {
@@ -247,7 +273,6 @@
                     letter-spacing: -0.02em;
 
                     position: relative;
-                    // height: 55px;
                     padding: 15px 0 10px;
                     background: transparent;
                 }
@@ -271,15 +296,83 @@
                     top: 0;
                     font-size: 14px;
                 }
-                .error {
-                    color: red;
-                    font-size: 14px;
-                    line-height: 110%;
-                    position: absolute;
-                    top: 100%;
-                    right: 0;
-                }
             }
+
+            // phone input
+            .phone-wrap {
+                z-index: 3 !important;
+                position: relative;
+              
+                .iti {
+                  width: 100%;
+                }
+              
+                .iti__flag {
+                  background-image: url("../../js/int_tel_input/build/img/flags.png");
+                }
+              
+                .label {
+                  top: 0;
+                  font-size: 14px;
+                }
+
+                .input {
+                    &::placeholder {
+                        color: #8082AA;
+                    }
+                }
+              
+                .fake-code {
+                    // display: block;
+                    // background: #ffffff;
+                    // color: #8082AA;
+                    // position: absolute;
+                    // top: 14.5px;
+                    // font-size: 25px;
+                    // line-height: 140%;
+                    // left: 53px;
+                    // z-index: 2;
+                    // letter-spacing: -0.02em;
+
+                    display: block;
+                    background: #ffffff;
+                    color: #8082AA;
+                    position: absolute;
+                    top: 14.5px;
+                    font-size: 25px;
+                    left: 53px;
+                    padding-right: 5px;
+                    z-index: 2;
+                    line-height: 140%;
+                    letter-spacing: -0.02em;
+                    
+                    @media (max-width: 1024px) {
+                      font-size: 16px;
+                    }
+                 }
+              
+                .iti {
+                  .phone-mask {
+                    padding-right: 6px;
+                    padding-left: 52px;
+                  }
+                }
+              
+                @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+                  .iti__flag {
+                    background-image: url("../../js/int_tel_input/build/img/flags@2x.png");
+                  }
+                }
+              
+                @media (max-width: 767px) {
+                  .iti {
+                    .phone-mask {
+                      padding-right: 6px !important;
+                      padding-left: 52px !important;
+                    }
+                  }
+                }
+              }
         }
 
         .blue-btn {

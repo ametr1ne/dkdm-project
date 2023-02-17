@@ -5,18 +5,32 @@
         align-items: center;
     }
 
+    &__block-title {
+        max-width: 420px;
+    }
+
     &__imgbox { 
         margin-bottom: 30px;
         position: relative;
+        height: 500px;
+        width: 500px;
+        background-color: #E9ECF3;
+        border-radius: 7px;
 
         .interactive-img {
             position: absolute;
             top: 0;
             left: 0;
+            transition: opacity .4s ease-out;
+            opacity: 0;
         }
 
-        .img-4 {
-            z-index: -1;
+        .img-2 {
+            opacity: 1;
+        }
+
+        .img_visible {
+            opacity: 1;
         }
     }
 
@@ -25,7 +39,7 @@
         display: flex;
         column-gap: 20px;
 
-        .item {
+        .tech-item {
             cursor: pointer;
             background-color: white;
             padding: 20px;

@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/img/favicon.svg" type="image/x-icon">
+
     <link rel="stylesheet" href="../OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css"/>
     <link rel="stylesheet" href="../OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css"/>
+    <link rel="stylesheet" href="../assets/js/int_tel_input/build/css/intlTelInput.css"/>
     <link rel="stylesheet" href="../assets/scss/dkdm/style.css">
-    <link rel="shortcut icon" href="../assets/img/favicon.svg" type="image/x-icon">
+    
     <script defer src="../assets/js/jquery.3-5-1.min.js"></script>
     <script defer src="../OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script defer src="../assets/js/jquery.validate.min.js"></script>
+    <script defer src="../assets/js/messages_ru.js"></script>
+    <script defer src="../assets/js/int_tel_input/build/js/intlTelInput.js"></script>
     <script defer src="../assets/js/dkdm.js"></script>
+
     <title>Дизайн карточек для маркетплейсов</title>
 </head>
 <body>
@@ -18,10 +25,10 @@
         <div class="wrapper">
             <div class="header__content">
                 <div class="header__links">
+                    <a href="#soft" class="header__link">Все о курсе</a>
                     <a href="#program" class="header__link">Программа курса</a>
                     <a href="#author" class="header__link">Автор курса</a>
                     <a href="#facts" class="header__link">Факты о Yodiz</a>
-                    <a href="#" class="header__link">Отзывы</a>
                     <a href="#signup" class="header__link">Тарифы</a>
                 </div>
             </div>
@@ -47,11 +54,11 @@
                 </div>
             </div>
         </section>
-        <section class="soft">
+        <section id="soft" class="soft">
             <div class="wrapper">
                 <div class="soft__content">
                     <h2 class="block-title">Софт</h2>
-                    <p class="block-description">На курсе с 0 до PRO освоим самые популярные программы для работы веб-дизайнера Figma и Photoshop</p>
+                    <p class="block-description soft__block-description">На курсе с 0 до PRO освоим самые популярные программы для работы веб-дизайнера Figma и Photoshop</p>
                     <div class="soft__icons">
                         <svg class="ps-icon" width="151" height="151" viewBox="0 0 151 151" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="150.164" y="150.602" width="150" height="150" rx="7" transform="rotate(180 150.164 150.602)" fill="#0500FF"/>
@@ -74,7 +81,7 @@
             <div class="wrapper">
                 <div class="goal__content">
                     <h2 class="block-title">Цель</h2>
-                    <p class="block-description">Освоим актуальную профессию, научимся брать заказы и зарабатывать на фрилансе</p>
+                    <p class="block-description goal__block-description">Освоим актуальную профессию, научимся брать заказы и зарабатывать на фрилансе</p>
                     <img src="../assets/img/dkdm/goal.png" alt="goal">
                 </div>
             </div>
@@ -116,27 +123,26 @@
         <section class="tech">
             <div class="wrapper">
                 <div class="tech__content">
-                    <h2 class="block-title">Освоим тех. дизайн в Photoshop</h2>
+                    <h2 class="block-title tech__block-title">Освоим тех. дизайн в Photoshop</h2>
                     <p class="block-description">Поиск и коллажирование изображений. Работа с перспективой. Настройка света, теней, полутеней и рефлексов.</p>
                     <div class="tech__imgbox">
-                        <img src="../assets/img/dkdm/tech.png" alt="tech">
-                        <img class="interactive-img img-1" src="../assets/img/dkdm/0.png" alt="tech">
-                        <img class="interactive-img img-2" src="../assets/img/dkdm/1.png" alt="tech">
-                        <img class="interactive-img img-3" src="../assets/img/dkdm/2.png" alt="tech">
-                        <img class="interactive-img img-4" src="../assets/img/dkdm/3.jpg" alt="tech">
-                        <img class="interactive-img img-5" src="../assets/img/dkdm/4.png" alt="tech">
+                        <img class="interactive-img img-1" src="../assets/img/dkdm/3.jpg" alt="bg">
+                        <img class="interactive-img img-3" src="../assets/img/dkdm/2.png" alt="desk">
+                        <img class="interactive-img img-2" src="../assets/img/dkdm/0.png" alt="juice">
+                        <img class="interactive-img img-4" src="../assets/img/dkdm/4.png" alt="blurred">
+                        <img class="interactive-img img-5" src="../assets/img/dkdm/1.png" alt="oringe">
                     </div>
                     <div class="tech__items">
-                        <div class="item">
+                        <div class="tech-item tech-item5" data-order="5">
                             <img src="../assets/img/dkdm/tech1.png" alt="tech1">
                         </div>
-                        <div class="item">
+                        <div class="tech-item tech-item4" data-order="4">
                             <img src="../assets/img/dkdm/tech2.png" alt="tech2">
                         </div>
-                        <div class="item">
+                        <div class="tech-item tech-item3" data-order="3">
                             <img src="../assets/img/dkdm/tech3.png" alt="tech3">
                         </div>
-                        <div class="item">
+                        <div class="tech-item tech-item1" data-order="1">
                             <img src="../assets/img/dkdm/tech4.png" alt="tech4">
                         </div>
                     </div>
@@ -426,14 +432,14 @@
         <section id="signup" class="signup">
             <div class="wrapper">
                 <div class="singup__content">
-                    <h2 class="block-title singup__block-title">Записаться на курс</h2>
-                    <p class="block-description ">Предстартовая скидка 40% закроется через <strong>1 день, 21:29:34</strong></p>
+                    <h2 class="block-title signup__block-title">Записаться на курс</h2>
+                    <p class="block-description signup__block-description">Предстартовая скидка 40% закроется через <strong>1 день, 21:29:34</strong></p>
                     <div class="form-wrap">
                         <p class="form-wrap__title">Выберите тариф</p>
-                        <form class="form">
+                        <form class="form" id="form">
                             <div class="tariffes">
                                 <label>
-                                    <input value="9900" class="tariff1-radio" type="radio" name="tariff" id="tariff1">
+                                    <input value="9900" class="tariff1-radio" type="radio" name="price" id="tariff1" aria-describedby="error-price">
                                     <div class="tariff">
                                         <div class="sale-chip">40%</div>
                                         <div class="tariff__radio-block">
@@ -453,7 +459,7 @@
                                     </div>
                                 </label>
                                 <label>
-                                    <input value="14100" class="tariff1-radio" type="radio" name="tariff" id="tariff2">
+                                    <input value="14100" class="tariff1-radio" type="radio" name="price" id="tariff2" aria-describedby="error-price">
                                     <div class="tariff">
                                         <div class="sale-chip">40%</div>
                                         <div class="tariff__radio-block">
@@ -473,7 +479,7 @@
                                     </div>
                                 </label>
                                 <label>
-                                    <input value="39900" class="tariff1-radio" type="radio" name="tariff" id="tariff3">
+                                    <input value="39900" class="tariff1-radio" type="radio" name="price" id="tariff3" aria-describedby="error-price">
                                     <div class="tariff">
                                         <div class="sale-chip">40%</div>
                                         <div class="tariff__radio-block">
@@ -492,32 +498,34 @@
                                         </div>
                                     </div>
                                 </label>
+                                <span class="error" id="error-price"></span>
                             </div>
                             <div class="contact-data">
                                 <div class="input-wrap">
-                                    <input class="input" type="text" name="name" value="" aria-describedby="error-name" onkeyup="this.setAttribute('value', this.value)">
+                                    <input class="input" type="text" name="name" aria-describedby="error-name">
                                     <label class="label">Имя</label>
                                     <span class="error" id="error-name"></span>
                                 </div>
                                 <div class="input-wrap">
-                                    <input class="input" type="email" name="email" value="" aria-describedby="error-name" onkeyup="this.setAttribute('value', this.value)">
+                                    <input class="input" type="email" name="email" aria-describedby="error-email">
                                     <label class="label">E-mail</label>
                                     <span class="error" id="error-email"></span>
                                 </div>
-                                <div class="input-wrap">
-                                    <input class="input" type="tel" name="phone" value="" aria-describedby="error-name" onkeyup="this.setAttribute('value', this.value)">
+                                <div class="input-wrap phone-wrap">
+                                    <span class="fake-code"></span>
+                                    <input maxlength="18" class="input phone-mask" type="tel" name="phone" aria-describedby="error-phone">
                                     <label class="label">Телефон</label>
                                     <span class="error" id="error-phone"></span>
                                 </div>
                             </div>
-                            <button class="button blue-btn" type="button">Отправить</button>
+                            <button class="button submit-btn blue-btn" type="submit">Отправить</button>
                         </form>
                         <p class="form-wrap__note">Я согласен с условиями обработки персональных данных</p>
                         <div class="form-wrap__bubbles">
                             <div class="avatars">
-                                <img class="bubble" src="../assets/img/dkdm/mock.png" alt="avatar1">
-                                <img class="bubble" src="../assets/img/dkdm/mock.png" alt="avatar2">
-                                <img class="bubble" src="../assets/img/dkdm/mock.png" alt="avatar3">
+                                <img id="bubble1" class="bubble" src="" alt="avatar1">
+                                <img id="bubble2" class="bubble" src="" alt="avatar2">
+                                <img id="bubble3" class="bubble" src="" alt="avatar3">
                                 <div class="bubble bubble_last">+194</div>
                             </div>
                             <small>студента на курсе</small>

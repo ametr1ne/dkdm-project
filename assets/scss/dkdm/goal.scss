@@ -1,10 +1,15 @@
 .goal {
     margin-top: 80px;
 
+    &__block-description {
+        max-width: 638px;
+    }
+
     &__content {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
 
         img {
             object-fit: contain;

@@ -1,3 +1,33 @@
+// randomizer students avatars
+
+// const avatars = $('.avatars')
+
+
+// window.addEventListener('scroll', function() {
+//     const rects = avatars[0].getBoundingClientRect()
+//     console.log(rects);
+
+//     if (rects.top < 1000) {
+        
+//     }
+// })
+
+const array= []
+
+for(i=1;i<=10;i++){
+    array.push(i)
+ }
+ 
+ setTimeout(function() {
+     $('.bubble').each(function() {
+         const randomIndex = array.splice(Math.random()*array.length,1)[0]
+         $(this).attr('src', '../assets/img/dkdm/students/student' + randomIndex +'.jpg')
+         $(this).addClass('bubble-loaded')
+     })
+ }, 500)
+
+// portfolio slider
+
 $('#portfolio-slider').owlCarousel({
     items: 3,
     margin: 30,
@@ -45,6 +75,64 @@ window.addEventListener("scroll", function() {
     }
 });
 
+// form handler
+
+function formHandler(id, url) {
+    $.ajax({
+        url: url,
+        type: "POST",
+        data: $(id).serialize(),
+        beforeSend: function() {
+            $(id).find('.submit-btn').attr('disabled', true);
+            $(id).find('.submit-btn').addClass('loading-btn');
+            $(id).find('.submit-btn').text('Подождите, отправляем...')
+        },
+        complete: function() {
+            $(id).find('.submit-btn').attr('disabled', false);
+            $(id).find('.submit-btn').removeClass('loading-btn');
+            $(id).find('.submit-btn').text('Отправить')
+        },
+        success: function (data) {
+            // amoSendler(id)
+            $('body').addClass('form_done');
+            $(id).trigger('reset');
+            $('.input__wrap input').val('')
+            $('.input__wrap input').attr('value', '')
+        }
+    });
+}
+
+$('#form').validate({
+    errorElement: 'span',
+    rules: {
+        price: {
+            required: true
+        },
+        name: {
+            required: true,
+            minlength: 3
+        },
+        email: {
+            required: true,
+            email: true
+        },
+        phone: {
+            required: true
+        }
+    },
+    messages: {
+        email: {
+            email: "Некорректный e-mail"
+        },
+        price: {
+            required: "Выберите тариф"
+        }
+    },
+    submitHandler: function () {
+        formHandler('#form', '/dkdm/request.php')
+    }
+});
+
 // inputs 
 
 const input = $('.input')
@@ -74,6 +162,13 @@ $(document).ready(function () {
     inputs()
 })
 
+// interactive block
+
+$('.tech-item').on('click', function() {
+    const order = $(this).attr('data-order')
+    $('.img-' + order).toggleClass('img_visible')
+})
+
 // smooth scroll
 
 $(document).ready(function(){
@@ -89,4 +184,54 @@ $(document).ready(function(){
         });
       } 
     });
-  });
+});
+
+// phone input
+
+$(document).ready(function(){
+    const phoneinput = document.querySelector(".phone-mask");
+
+    const iti = intlTelInput(phoneinput, {
+        preferredCountries: [
+            'ru',
+            'by',
+            'ua'
+        ],
+        utilsScript: 'http://127.0.0.1:5500/assets/js/int_tel_input/build/js/utils.js',
+        autoPlaceholder: 'aggressive',
+        nationalMode: false
+    })
+
+    $(phoneinput).on('input keyup', function () {
+        phoneinput.value = phoneinput.value.replace(/[^\d()+]+$/, '')
+    })
+
+    function settingFakeCode() {
+        let countryData = iti.getSelectedCountryData();
+        $(phoneinput).val('+' + countryData.dialCode)
+        $('.fake-code').text("+" + countryData.dialCode + ' ')
+        const fakeCodeWidth = $('.fake-code').outerWidth()
+        if (window.matchMedia('(max-width: 1024px)').matches) {
+            $('.fake-code').css('left', '48px')
+        } else {
+            if (fakeCodeWidth > 48) {
+                $('.fake-code').css('left', '46px')
+            } else {
+                $('.fake-code').css('left', '47px')
+            }
+        }
+    }
+
+    $(phoneinput).on('focus', function () {
+        settingFakeCode()
+    })
+
+    phoneinput.addEventListener("countrychange", function () {
+        settingFakeCode()
+    });
+
+    phoneinput.addEventListener('input', function () {
+        let dataCountry = iti.getSelectedCountryData()
+        this.value = "+" + dataCountry.dialCode + this.value.slice(dataCountry.dialCode.length + 1);
+    });
+})
