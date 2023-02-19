@@ -281,6 +281,9 @@ section {
 .portfolio__slider {
   margin-bottom: 50px;
 }
+.portfolio__slider img {
+  cursor: grab;
+}
 .portfolio .button {
   margin: 0 auto;
 }
@@ -360,7 +363,7 @@ section {
 .tech__items .tech-item:hover {
   box-shadow: -20px 40px 50px rgba(0, 24, 84, 0.15);
 }
-.tech__items .tech-item:active {
+.tech__items .tech-item--active {
   border: 1px solid #0500FF;
 }
 .tech__desc {
@@ -434,13 +437,15 @@ section {
   line-height: 120%;
   letter-spacing: -0.02em;
   position: relative;
-  padding-left: 15px;
   color: #8082AA;
 }
 .program__body .program-item__list ul li:not(:last-child) {
   margin-bottom: 5px;
 }
-.program__body .program-item__list ul li::after {
+.program__body .program-item__list ul li:not(.list__text) {
+  padding-left: 15px;
+}
+.program__body .program-item__list ul li:not(.list__text)::after {
   display: block;
   position: absolute;
   content: "";

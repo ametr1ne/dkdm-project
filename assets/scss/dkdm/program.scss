@@ -43,23 +43,26 @@
                         line-height: 120%;
                         letter-spacing: -0.02em;
                         position: relative;
-                        padding-left: 15px;
                         color: #8082AA;
 
                         &:not(:last-child) {
                             margin-bottom: 5px;
                         }
 
-                        &::after {
-                            display: block;
-                            position: absolute;
-                            content: "";
-                            top: 8px;
-                            left: 0;
-                            width: 4px;
-                            height: 4px;
-                            background: #8082AA;
-                            border-radius: 50%;
+                        &:not(.list__text) {
+                            padding-left: 15px;
+
+                            &::after {
+                                display: block;
+                                position: absolute;
+                                content: "";
+                                top: 8px;
+                                left: 0;
+                                width: 4px;
+                                height: 4px;
+                                background: #8082AA;
+                                border-radius: 50%;
+                            }
                         }
                     }
                 }

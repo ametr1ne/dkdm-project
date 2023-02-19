@@ -60,7 +60,7 @@ const headBlock = $('.head')
 window.addEventListener("scroll", function() {
     if (window.pageYOffset < 1200) {
         headBlockBounds = headBlock[0].getBoundingClientRect()
-        rotatingStar.style.transform = "rotate("+parseInt(headBlockBounds.top * .1)+"deg)"
+        rotatingStar.style.transform = "rotate("+parseInt(headBlockBounds.top * .1 / 2)+"deg)"
     }
 });
 
@@ -166,6 +166,9 @@ $(document).ready(function () {
 // interactive block
 
 $('.tech-item').on('click', function() {
+    $(this).addClass('tech-item--active')
+    $(this).siblings().removeClass('tech-item--active')
+
     const order = $(this).attr('data-order')
     $('.img-' + order).toggleClass('img_visible')
 })
