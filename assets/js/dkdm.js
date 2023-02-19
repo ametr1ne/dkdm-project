@@ -176,17 +176,11 @@ $('.tech-item').on('click', function() {
 // smooth scroll
 
 $(document).ready(function(){
-    $("a").on('click', function(event) {
-      if (this.hash !== "") {
-        event.preventDefault();
-        var hash = this.hash;
-  
+    $('a').click(function (e) {
         $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-          window.location.hash = hash;
-        });
-      } 
+            scrollTop: $($.attr(this, 'href')).offset().top - 41
+        }, 600);
+        return false;
     });
 });
 
@@ -220,10 +214,14 @@ $(document).ready(function(){
         if (window.matchMedia('(max-width: 1024px)').matches) {
             $('.fake-code').css('left', '48px')
         } else {
-            if (fakeCodeWidth > 48) {
-                $('.fake-code').css('left', '46px')
-            } else {
+            if (fakeCodeWidth > 50) {
+                $('.fake-code').css('left', '46.5px')
+            } else if (fakeCodeWidth > 48) {
                 $('.fake-code').css('left', '47px')
+            } else {
+                if (fakeCodeWidth > 44) {
+                    $('.fake-code').css('left', '46px')
+                }
             }
         }
     }

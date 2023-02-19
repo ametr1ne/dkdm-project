@@ -54,6 +54,13 @@ a {
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Proxima Nova Bold";
+  src: url("../../fonts/ProximaNova-Bold.woff2") format("woff2"), url("../../fonts/ProximaNova-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 body {
   font-family: "Proxima Nova", sans-serif;
   background: #F8F9FE;
@@ -63,6 +70,10 @@ p {
   font-size: 25px;
   letter-spacing: -0.02em;
   line-height: 120%;
+}
+
+a {
+  transition: color 0.4s;
 }
 
 .wrapper {
@@ -580,9 +591,12 @@ section {
   text-align: center;
   margin-bottom: 24px;
 }
+.signup .form-wrap .note--blue:hover {
+  color: #0067ff;
+}
 .signup .form-wrap__bubbles {
   display: flex;
-  column-gap: 10px;
+  column-gap: 7px;
   align-items: center;
   justify-content: center;
 }
@@ -617,9 +631,10 @@ section {
   transform: scale(1);
 }
 .signup .form-wrap__bubbles small {
+  font-weight: 700;
   font-size: 14px;
   line-height: 140%;
-  letter-spacing: -0.02em;
+  color: #9090A9;
 }
 .signup .form {
   margin-bottom: 28px;
@@ -807,9 +822,6 @@ section {
 .signup .form .contact-data .phone-wrap .iti {
   width: 100%;
 }
-.signup .form .contact-data .phone-wrap .iti__flag {
-  background-image: url("../../js/int_tel_input/build/img/flags.png");
-}
 .signup .form .contact-data .phone-wrap .label {
   top: 0;
   font-size: 14px;
@@ -824,7 +836,7 @@ section {
   position: absolute;
   top: 15.5px;
   font-size: 25px;
-  left: 53px;
+  left: 47px;
   padding-right: 5px;
   z-index: 2;
   line-height: 140%;
