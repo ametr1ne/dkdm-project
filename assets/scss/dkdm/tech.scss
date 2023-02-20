@@ -100,9 +100,9 @@
                     box-shadow: none;
                 }
 
-                // &:not(:last-child) {
-                //     margin-right: 11px;
-                // }
+                &:not(:last-child) {
+                    margin-right: 11px;
+                }
 
                 &:nth-child(-n+2) {
                     padding: 18px 7px;

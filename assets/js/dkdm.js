@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
             mouseDrag: true,
             nav: false,
             loop: false,
-            gutter: 11,
             controls: false,
             autoWidth: true,
             responsive: {
@@ -145,11 +144,7 @@ function formHandler(id, url) {
             $(id).find('.submit-btn').text('Отправить')
         },
         success: function (data) {
-            // amoSendler(id)
-            $('body').addClass('form_done');
-            $(id).trigger('reset');
-            $('.input__wrap input').val('')
-            $('.input__wrap input').attr('value', '')
+            formSubmitted(id)
         }
     });
 }
@@ -181,9 +176,29 @@ $('#form').validate({
         }
     },
     submitHandler: function () {
-        formHandler('#form', '/dkdm/request.php')
+        formHandler('#form', 'request.php')
     }
 });
+
+function formSubmitted(id) {
+    $('.form-done').css('display', 'flex')
+    $('.form-done').addClass("show")
+    $('.form-wrap__title').addClass("hide").animate({height: 0}, 600, function(){
+        $(this).remove();
+    })
+    $('.form').addClass("hide").animate({height: 0}, 600, function(){
+        $(this).remove();
+    })
+    $('.form-wrap__bubbles').addClass("hide").animate({height: 0}, 600, function(){
+        $(this).remove();
+    })
+    $('.form-wrap__note').addClass("hide").animate({height: 0}, 600, function(){
+        $(this).remove();
+    })
+    $(id).trigger('reset');
+    $('.input__wrap input').val('')
+    $('.input__wrap input').attr('value', '')
+}
 
 // inputs 
 
@@ -262,8 +277,14 @@ $(document).ready(function(){
         $(phoneinput).val('+' + countryData.dialCode)
         $('.fake-code').text("+" + countryData.dialCode + ' ')
         const fakeCodeWidth = $('.fake-code').outerWidth()
-        if (window.matchMedia('(max-width: 1024px)').matches) {
-            $('.fake-code').css('left', '48px')
+        if (window.matchMedia('(max-width: 767px)').matches) {
+            if (fakeCodeWidth < 44) {
+                $('.fake-code').css('left', '47px')
+            } else if (fakeCodeWidth < 48) {
+                $('.fake-code').css('left', '46px')
+            } else {
+                $('.fake-code').css('left', '47px')
+            }
         } else {
             if (fakeCodeWidth > 50) {
                 $('.fake-code').css('left', '46.5px')

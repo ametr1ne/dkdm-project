@@ -18,6 +18,7 @@
         &__title {
             color: #8082AA;
             margin-bottom: 24px;
+            transition: opacity .4s;
         }
 
         &__note {
@@ -26,6 +27,7 @@
             color: #9090A9;
             text-align: center;
             margin-bottom: 24px;
+            transition: opacity .4s;
         }
 
         .note--blue {
@@ -39,6 +41,7 @@
             column-gap: 7px;
             align-items: center;
             justify-content: center;
+            transition: opacity .4s;
 
             .avatars {
                 display: flex;
@@ -84,8 +87,60 @@
         }
     }
 
+    .form-done {
+        padding: 9px 41px;
+        text-align: center;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: opacity .4s;
+
+        p {
+            font-size: 25px;
+            line-height: 120%;
+            text-align: center;
+            letter-spacing: -0.02em;
+            max-width: 543px;
+
+            color: #8082AA;
+
+            &:first-child {
+                margin-bottom: 20px;
+            }
+        }
+        &__links {
+            margin-top: 25px;
+            display: flex;
+            column-gap: 20px;
+            margin-bottom: 31px;
+        }
+        &__link {
+            font-size: 19px;
+            line-height: 130%;
+            color: #0500FF;
+
+            &:hover {
+                color: #0400DD;
+            }
+        }
+        img {
+            border-radius: 126px;
+            width: 100%;
+        }
+    }
+
+    .hide {
+        opacity: 0;
+    }
+
+    .show {
+        opacity: 1;
+    }
+
     .form {
         margin-bottom: 28px;
+        transition: opacity .4s;
 
         .tariffes {
             row-gap: 20px;
@@ -339,10 +394,6 @@
                     z-index: 2;
                     line-height: 140%;
                     letter-spacing: -0.02em;
-                    
-                    @media (max-width: 1024px) {
-                      font-size: 16px;
-                    }
                  }
               
                 .iti {
@@ -377,6 +428,10 @@
             &:hover {
                 background: #0400DD;
             }
+        }
+
+        .loading-btn {
+            background: #9090A9;
         }
     }
 
@@ -482,6 +537,10 @@
                 .input-wrap {
                     min-width: unset;
 
+                    .fake-code {
+                        font-size: 20px;
+                    }
+
                     &:not(:last-child) {
                         margin-bottom: 21px;
                     }
@@ -494,6 +553,8 @@
                     }
 
                     .input {
+                        font-size: 20px;
+
                         &::placeholder {
                             font-size: 20px;
                         }

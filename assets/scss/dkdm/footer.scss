@@ -45,6 +45,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         margin-top: 24px;
+        row-gap: 20px;
     }
 
     @media (max-width: 767px) {
@@ -56,28 +57,32 @@
         }
         
         .top {
-            display: block;
+            display: flex;
             max-width: 400px;
-            padding-left: 15px;
-            padding-right: 15px;
+            row-gap: 14px;
+
+            .juri-name {
+                svg {
+                    margin-right: 9px;
+                    width: 15.71px;
+                    margin-top: 0;
+                }
+            }
         }
 
         .bottom {
             max-width: 400px;
-            padding-left: 15px;
-            padding-right: 15px;
-            margin-top: 10px;
+            margin-top: 14px;
           }
         
         &__links {
-            margin-top: 17px;
             flex-wrap: wrap;
             grid-column-gap: 12px;
             grid-row-gap: 8px;
         }
-        
-        .footer__links a:nth(3n) {
-            margin-right: 0;
+
+        &__left {
+            display: none;
         }
         
         .btn {
@@ -85,14 +90,6 @@
             max-width: 400px;
             margin-left: auto !important;
             margin-right: auto !important;
-        }
-        
-        .footer__policy:hover {
-            color: #777777;
-        }
-        
-        .footer__address {
-            margin-bottom: 15px;
         }
     }
 }
