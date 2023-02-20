@@ -1,5 +1,5 @@
 .soft {
-    margin-top: 80px;
+    margin-top: 0;
 
     &__content {
         display: flex;
@@ -21,6 +21,21 @@
         }
         .figma-icon {
             filter: drop-shadow(-20px 40px 50px rgba(0, 24, 84, 0.15));
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__icons {
+            column-gap: 13px;
+
+            .ps-icon {
+                margin-top: 21px;
+            }
+
+            svg {
+                width: 103px;
+                height: 103px;
+            }
         }
     }
 }

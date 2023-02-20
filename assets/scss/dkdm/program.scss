@@ -28,6 +28,10 @@
                 svg {
                     transition: transform .4s;
                 }
+
+                .arrow__mobile {
+                    display: none;
+                }
             }
 
             &__list {
@@ -89,5 +93,42 @@
 
     .button {
         margin: 0 auto;       
+    }
+
+    @media (max-width: 767px) {
+        &__body {
+            margin-bottom: 40px;
+
+            .program-item {
+                padding: 0 21px;
+
+                &__arrow {
+                    height: 20px;
+                    width: 20px;
+                    min-width: 20px;
+
+                    .arrow__desktop {
+                        display: none;
+                    }
+
+                    .arrow__mobile {
+                        display: block;
+                    }
+                }
+
+                &__title {
+                    line-height: 26px;
+                    padding-right: 10px;
+                }
+
+                &__list {
+                    ul {
+                        li {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

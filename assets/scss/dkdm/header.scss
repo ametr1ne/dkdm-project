@@ -32,4 +32,10 @@
             color: white;
         }
     }
+
+    @media (max-width: 767px) {
+        &__links {
+            display: none;
+        }
+    }
 }

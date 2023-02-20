@@ -1,8 +1,23 @@
 .lifehacks {
     margin-top: 100px;
 
-    &__img1 {
+    &__first {
         margin-bottom: 70px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        img {
+            max-width: 600px;
+        }
+    }
+
+    &__img2 {
+        align-self: center;
+    }
+
+    &__img3 {
+        align-self: flex-end;
     }
 
     &__imgs {
@@ -27,5 +42,26 @@
 
     .button {
         margin: 0 auto;
+    }
+
+    @media (max-width: 767px) {
+        &__first {
+            row-gap: 10px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &__imgs {
+            img {
+                width: 175px;
+
+                &:nth-child(1) {
+                    margin-top: 75px;
+                    margin-right: -25px;
+                }
+            }
+        }
     }
 }

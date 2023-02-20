@@ -217,11 +217,13 @@
             }
 
             &__title-block {
-                max-width: 240px;
+                max-width: 219px;
+                margin-right: 60px;
 
                 p {
                     font-size: 25px;
                     line-height: 120%;
+                    font-weight: 700;
                 }
             }
 
@@ -370,13 +372,126 @@
         .blue-btn {
             background: #0500FF;
             border-radius: 100px;
-            padding: 21px 180px 23px;
+            padding: 21px 0 23px;
 
             &:hover {
                 background: #0400DD;
             }
         }
+    }
 
-        
+    @media (max-width: 767px) {
+        margin-top: 70px;
+
+        &__block-description {
+            font-size: 20px;
+        }
+
+        .form-wrap {
+            padding: 19px 20px 24px;
+
+            &__title {
+                margin-bottom: 15px;
+            }
+        }
+
+        .form {
+            .tariff {
+                display: grid;
+                grid-template-areas: 'radio title' 'price price';
+                grid-template-columns: min-content 1fr;
+                row-gap: 18px;
+                padding: 20px;
+
+                &__radio-block {
+                    grid-area: radio;
+                    align-items: flex-start;
+                    
+                    .fake-radio {
+                        height: 30px;
+                        width: 30px;
+                        margin-right: 15px;
+
+                        &::before {
+                            width: 10px;
+                            height: 10px;
+                        }
+                    }
+                }
+
+                .tariff-block {
+                    row-gap: 8px;
+                }
+
+                .chip {
+                    font-size: 12px;
+                    padding: 3px 8px;
+                }
+
+                .footnote {
+                    font-size: 16px;
+
+                    .chip {
+                        margin-left: 6px;
+                    }
+                }
+
+                &__title-block {
+                    grid-area: title;
+                    margin-right: 0;
+                    max-width: 172px;
+
+                    p {
+                        font-size: 20px;
+                    }
+                }
+                &__price-block {
+                    grid-area: price;
+
+                    .prices {
+                        column-gap: 20px;
+
+                        .old-price {
+                            &::before {
+                                top: 11px
+                            }
+                        }
+                    }
+                }
+            }
+
+            .tariffes {
+                margin-bottom: 40px;
+            }
+            
+            .contact-data {
+                .input-wrap {
+                    min-width: unset;
+
+                    &:not(:last-child) {
+                        margin-bottom: 21px;
+                    }
+
+                    .label {
+                        font-size: 20px;
+                    }
+                    .label_active {
+                        font-size: 12px;
+                    }
+
+                    .input {
+                        &::placeholder {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .phone-wrap {
+                    .label {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
     }
 }

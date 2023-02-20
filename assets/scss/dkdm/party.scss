@@ -22,4 +22,17 @@
     .button {
         margin: 0 auto;
     }
+
+    @media (max-width: 767px) {
+        &__imgs {
+            margin-bottom: 40px;
+
+            img {
+                &:nth-child(1) {
+                    margin-top: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
 }

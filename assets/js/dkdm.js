@@ -1,17 +1,5 @@
 // randomizer students avatars
 
-// const avatars = $('.avatars')
-
-
-// window.addEventListener('scroll', function() {
-//     const rects = avatars[0].getBoundingClientRect()
-//     console.log(rects);
-
-//     if (rects.top < 1000) {
-        
-//     }
-// })
-
 const array= []
 
 for(i=1;i<=10;i++){
@@ -31,12 +19,67 @@ for(i=1;i<=10;i++){
 const slider = tns({
     container: '.portfolio__slider',
     items: 3,
-    fixedWidth: 400,
     gutter: 20,
     center: true,
     controls: false,
-    mouseDrag: true
+    mouseDrag: true,
+    responsive: {
+        320: {
+            fixedWidth: 280
+        },
+        767: {
+            fixedWidth: 400
+        }
+    }
 });
+
+// party slider
+
+document.addEventListener('DOMContentLoaded', function() {
+    const parties = tns({
+        container: '.party__slider',
+        mouseDrag: true,
+        gutter: 20,
+        controls: false,
+        center: true,
+        fixedWidth: 280,
+        responsive: {
+            768: {
+                disable: true
+            }
+        }
+    });
+
+    const tech_slider = tns({
+        container: '.tech__slider',
+        mouseDrag: true,
+        loop: false,
+        gutter: 20,
+        controls: false,
+        center: true,
+        autoWidth: true,
+        responsive: {
+            768: {
+                disable: true
+            }
+        }
+    });
+
+    const facts_slider = tns({
+        container: '.facts__slider',
+        mouseDrag: true,
+        loop: false,
+        gutter: 20,
+        controls: false,
+        center: true,
+        fixedWidth: 280,
+        responsive: {
+            768: {
+                disable: true
+            }
+        }
+    });
+})
 
 // program course accordeon
 
@@ -57,24 +100,27 @@ $('.program-item__header').on('click', function() {
 const rotatingStar = document.getElementById('rotating-star')
 const headBlock = $('.head')
 
-window.addEventListener("scroll", function() {
-    if (window.pageYOffset < 1200) {
-        headBlockBounds = headBlock[0].getBoundingClientRect()
-        rotatingStar.style.transform = "rotate("+parseInt(headBlockBounds.top * .1 / 2)+"deg)"
-    }
-});
-
 const headCard1 = document.querySelector('.head__card_card1')
 const headCard2 = document.querySelector('.head__card_card2')
 
-window.addEventListener("scroll", function() {
-    if (window.pageYOffset < 1400) {
-        card1Bounds = headCard1.getBoundingClientRect()
-        card2Bounds = headCard2.getBoundingClientRect()
-        headCard1.style.transform = "translateY("+parseInt(card1Bounds.top * .2 / 2)+"px)"
-        headCard2.style.transform = "translateY("+parseInt(card2Bounds.top * .1 / 2)+"px)"
-    }
-});
+if (window.matchMedia('(min-width: 767px)').matches) {
+
+    window.addEventListener("scroll", function() {
+        if (window.pageYOffset < 1200) {
+            headBlockBounds = headBlock[0].getBoundingClientRect()
+            rotatingStar.style.transform = "rotate("+parseInt(headBlockBounds.top * .1 / 2)+"deg)"
+        }
+    });
+
+    window.addEventListener("scroll", function() {
+        if (window.pageYOffset < 1400) {
+            card1Bounds = headCard1.getBoundingClientRect()
+            card2Bounds = headCard2.getBoundingClientRect()
+            headCard1.style.transform = "translateY("+parseInt(card1Bounds.top * .2 / 2)+"px)"
+            headCard2.style.transform = "translateY("+parseInt(card2Bounds.top * .1 / 2)+"px)"
+        }
+    });
+}
 
 // form handler
 
