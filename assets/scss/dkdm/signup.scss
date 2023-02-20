@@ -393,9 +393,21 @@
             &__title {
                 margin-bottom: 15px;
             }
+
+            &__note {
+                font-size: 16px;
+                margin-bottom: 17px;
+            }
+
+            &__bubbles {
+                flex-direction: column;
+                row-gap: 7px;
+            }
         }
 
         .form {
+            margin-bottom: 20px;
+
             .tariff {
                 display: grid;
                 grid-template-areas: 'radio title' 'price price';
@@ -465,6 +477,8 @@
             }
             
             .contact-data {
+                margin-bottom: 34px;
+
                 .input-wrap {
                     min-width: unset;
 

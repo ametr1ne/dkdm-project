@@ -47,6 +47,8 @@
     }
 
     @media (max-width: 767px) {
+        margin-top: 70px;
+
         &__block-title {
             margin-bottom: 27px;
         }
@@ -62,6 +64,9 @@
                 min-height: 270px;
                 padding: 21px 21px 14px;
             }
+        }
+        &__block-description {
+            margin-bottom: 25px;
         }
     }
 }

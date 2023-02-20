@@ -42,28 +42,32 @@ document.addEventListener('DOMContentLoaded', function() {
         gutter: 20,
         controls: false,
         center: true,
+        loop: false,
         fixedWidth: 280,
+        nav: false,
         responsive: {
-            768: {
+            767: {
                 disable: true
             }
         }
     });
 
-    const tech_slider = tns({
-        container: '.tech__slider',
-        mouseDrag: true,
-        loop: false,
-        gutter: 20,
-        controls: false,
-        center: true,
-        autoWidth: true,
-        responsive: {
-            768: {
-                disable: true
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        const tech_slider = tns({
+            container: '.tech__slider',
+            mouseDrag: true,
+            nav: false,
+            loop: false,
+            gutter: 11,
+            controls: false,
+            autoWidth: true,
+            responsive: {
+                767: {
+                    disable: true
+                }
             }
-        }
-    });
+        });
+    }
 
     const facts_slider = tns({
         container: '.facts__slider',
@@ -73,8 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
         controls: false,
         center: true,
         fixedWidth: 280,
+        nav: false,
         responsive: {
-            768: {
+            767: {
                 disable: true
             }
         }
