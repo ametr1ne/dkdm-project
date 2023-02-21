@@ -447,7 +447,8 @@ section {
     row-gap: 10px;
   }
   .lifehacks__first img {
-    width: 100%;
+    max-width: 320px;
+    align-self: center;
   }
   .lifehacks__imgs img {
     width: 175px;
@@ -491,28 +492,24 @@ section {
 .tech .tns-outer {
   width: 100%;
 }
+.tech .splide {
+  visibility: visible;
+}
 .tech__items {
-  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   width: 100%;
+  max-width: 760px;
+  margin: 0 auto 20px;
 }
 .tech__items .tech-item {
   cursor: pointer;
-  background-color: white;
-  padding: 20px;
   border-radius: 7px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: box-shadow 0.4s, border 0.4s;
   border: 1px solid transparent;
 }
 .tech__items .tech-item:hover {
   box-shadow: -20px 40px 50px rgba(0, 24, 84, 0.15);
-}
-.tech__items .tech-item:nth-child(-n+2) {
-  padding: 20px 12px;
 }
 .tech__items .tech-item--active {
   border: 1px solid #0500FF;
@@ -533,34 +530,29 @@ section {
   .tech__imgbox .interactive-img {
     width: 100%;
   }
-  .tech__items .tech-item {
-    height: 70px;
-    padding: 11px 12px;
+  .tech .splide {
+    margin-bottom: 20px;
   }
   .tech__items .tech-item:hover {
     box-shadow: none;
   }
-  .tech__items .tech-item:not(:last-child) {
-    margin-right: 11px;
-  }
-  .tech__items .tech-item:nth-child(-n+2) {
-    padding: 18px 7px;
-  }
-  .tech__items .tech-item5 img {
-    width: 51px;
-  }
-  .tech__items .tech-item4 img {
-    width: 56px;
-  }
-  .tech__items .tech-item3 img {
-    width: 110px;
-  }
-  .tech__items .tech-item1 img {
-    width: 110px;
-  }
   .tech__desc {
     font-size: 16px;
     max-width: 218px;
+  }
+}
+@media (max-width: 500px) {
+  .tech__items .tech-item {
+    height: 70px;
+  }
+  .tech__items .tech-item:nth-child(-n+2) {
+    width: 81px;
+  }
+  .tech__items .tech-item:nth-child(3) {
+    width: 146px;
+  }
+  .tech__items .tech-item:nth-child(4) {
+    width: 144px;
   }
 }
 
@@ -814,7 +806,8 @@ section {
 .facts .companies {
   display: flex;
   column-gap: 30px;
-  margin-bottom: 50px;
+  max-width: 760px;
+  margin: 0 auto 50px;
 }
 .facts .companies .company-card {
   background-color: white;
@@ -846,7 +839,7 @@ section {
     margin-bottom: 20px;
   }
   .facts .companies {
-    margin-bottom: 40px;
+    margin: 0 0 40px;
   }
   .facts .companies .company-card {
     min-height: 270px;
@@ -988,8 +981,7 @@ section {
   position: relative;
 }
 .signup .form .tariff1-radio {
-  position: absolute;
-  opacity: 0;
+  display: none;
 }
 .signup .form .tariff1-radio:checked + .tariff {
   border: 1px solid #0500FF;
@@ -1232,6 +1224,20 @@ section {
     flex-direction: column;
     row-gap: 7px;
   }
+  .signup .form-wrap .form-done {
+    padding: 11px 0 8px;
+  }
+  .signup .form-wrap .form-done p {
+    font-size: 20px;
+    max-width: 239px;
+  }
+  .signup .form-wrap .form-done__links {
+    margin-top: 17px;
+    margin-bottom: 24px;
+  }
+  .signup .form-wrap .form-done__link {
+    font-size: 16px;
+  }
   .signup .form {
     margin-bottom: 20px;
   }
@@ -1271,7 +1277,7 @@ section {
   .signup .form .tariff__title-block {
     grid-area: title;
     margin-right: 0;
-    max-width: 172px;
+    max-width: unset;
   }
   .signup .form .tariff__title-block p {
     font-size: 20px;

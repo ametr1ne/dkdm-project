@@ -2,4 +2,4 @@
 
 $data = $_POST;
 
-echo $data;
+echo json_encode($data);

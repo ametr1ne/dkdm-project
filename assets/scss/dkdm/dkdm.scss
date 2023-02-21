@@ -16,9 +16,14 @@
     font-display: swap;
 }
 
+$bg-color: #F8F9FE;
+$red-lite: #FF0000;
+$red-dark: #EB0000;
+$grey-second: #8082AA;
+
 body {
     font-family: "Proxima Nova", sans-serif;
-    background: #F8F9FE;
+    background: $bg-color;
 }
 
 p {
@@ -61,12 +66,12 @@ section {
 }
 
 .red-btn {
-    background: #FF0000;
+    background: $red-lite;
     border-radius: 100px;
     filter: drop-shadow(-20px 40px 50px rgba(255, 0, 0, 0.8));
 
     &:hover {
-        background: #EB0000;
+        background: $red-dark;
     }
 }
 
@@ -84,7 +89,7 @@ section {
 }
 
 .block-description {
-    color: #8082AA;
+    color: $grey-second;
     text-align: center;
     margin-bottom: 33px;
 }

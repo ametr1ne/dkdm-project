@@ -151,11 +151,7 @@
         }
 
         .tariff1-radio {
-            // width: 0;
-            // height: 0;
-            position: absolute;
-            opacity: 0;
-            // z-index: -1;
+            display: none;
         }
 
         .tariff1-radio:checked {
@@ -458,6 +454,24 @@
                 flex-direction: column;
                 row-gap: 7px;
             }
+
+            .form-done {
+                padding: 11px 0 8px;
+
+                p {
+                    font-size: 20px;
+                    max-width: 239px;
+                }
+
+                &__links {
+                    margin-top: 17px;
+                    margin-bottom: 24px;
+                }
+
+                &__link {
+                    font-size: 16px;
+                }
+            }
         }
 
         .form {
@@ -506,7 +520,7 @@
                 &__title-block {
                     grid-area: title;
                     margin-right: 0;
-                    max-width: 172px;
+                    max-width: unset;
 
                     p {
                         font-size: 20px;

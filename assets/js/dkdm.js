@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mouseDrag: true,
         gutter: 20,
         controls: false,
+        preventScrollOnTouch: 'auto',
         center: true,
         loop: false,
         fixedWidth: 280,
@@ -52,29 +53,59 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    if (window.matchMedia('(max-width: 767px)').matches) {
-        const tech_slider = tns({
-            container: '.tech__slider',
-            mouseDrag: true,
-            nav: false,
-            loop: false,
-            controls: false,
-            autoWidth: true,
-            responsive: {
-                767: {
-                    disable: true
-                }
+    const imgbox = document.querySelector('.tech__imgbox')
+
+    let marginLeft = imgbox.getBoundingClientRect().left
+
+    const techSplide = $('.tech__splide')
+    const techSplideTrack =$('.tech__splide-track')
+    const techSplideList = $('.tech__items')
+
+    const splide = new Splide( '.splide', {
+        autoWidth: true,
+        gap: 11,
+        arrows: false,
+        padding: marginLeft,
+        pagination: false,
+        mediaQuery: 'min',
+        breakpoints: {
+            767: {
+                destroy: true
             }
-        });
+        }
+    })
+
+    if (matchMedia("(max-width: 767px)").matches) {
+        if (!techSplide.hasClass('splide')) {
+            techSplide.addClass('splide')
+            techSplideTrack.addClass('splide__track')
+            techSplideList.addClass('splide__list')
+        }
+        splide.mount()
+    } else {
+        techSplide.removeClass('splide')
+        techSplideTrack.removeClass('splide__track')
+        techSplideList.removeClass('splide__list')
     }
+
+    $(window).on('resize', function() {
+        if (matchMedia("(max-width: 767px)").matches) {
+            marginLeft = imgbox.getBoundingClientRect().left
+
+            splide.options = {
+                padding: marginLeft
+            }
+        }
+    })
 
     const facts_slider = tns({
         container: '.facts__slider',
         mouseDrag: true,
-        loop: false,
         gutter: 20,
         controls: false,
+        preventScrollOnTouch: 'auto',
         center: true,
+        loop: false,
         fixedWidth: 280,
         nav: false,
         responsive: {
@@ -143,7 +174,9 @@ function formHandler(id, url) {
             $(id).find('.submit-btn').removeClass('loading-btn');
             $(id).find('.submit-btn').text('Отправить')
         },
-        success: function (data) {
+        success: function (res) {
+            const data = JSON.parse(res)
+            console.log(data);
             formSubmitted(id)
         }
     });
@@ -180,6 +213,7 @@ $('#form').validate({
     }
 });
 
+
 function formSubmitted(id) {
     $('.form-done').css('display', 'flex')
     $('.form-done').addClass("show")
@@ -195,6 +229,7 @@ function formSubmitted(id) {
     $('.form-wrap__note').addClass("hide").animate({height: 0}, 600, function(){
         $(this).remove();
     })
+    // $('.form-done img').animate({borderRadius: 126}, 600)
     $(id).trigger('reset');
     $('.input__wrap input').val('')
     $('.input__wrap input').attr('value', '')

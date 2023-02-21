@@ -39,29 +39,25 @@
         width: 100%;
     }
 
+    .splide {
+        visibility: visible;
+    }
+
     &__items {
-        margin-bottom: 20px;
         display: flex;
         justify-content: space-between;
         width: 100%;
+        max-width: 760px;
+        margin: 0 auto 20px;
 
         .tech-item {
             cursor: pointer;
-            background-color: white;
-            padding: 20px;
             border-radius: 7px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             transition: box-shadow .4s, border .4s;
             border: 1px solid transparent;
 
             &:hover {
                 box-shadow: -20px 40px 50px rgba(0, 24, 84, 0.15);
-            }
-
-            &:nth-child(-n+2) {
-                padding: 20px 12px;
             }
         }
 
@@ -91,42 +87,14 @@
             }
         }
 
+        .splide {
+            margin-bottom: 20px;
+        }
+
         &__items {
             .tech-item {
-                height: 70px;
-                padding: 11px 12px;
-
                 &:hover {
                     box-shadow: none;
-                }
-
-                &:not(:last-child) {
-                    margin-right: 11px;
-                }
-
-                &:nth-child(-n+2) {
-                    padding: 18px 7px;
-                }
-            }
-
-            .tech-item5 {
-                img {
-                    width: 51px;
-                }
-            }
-            .tech-item4 {
-                img {
-                    width: 56px;
-                }
-            }
-            .tech-item3 {
-                img {
-                    width: 110px;
-                }
-            }
-            .tech-item1 {
-                img {
-                    width: 110px;
                 }
             }
         }
@@ -134,6 +102,24 @@
         &__desc {
             font-size: 16px;
             max-width: 218px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        &__items {
+            .tech-item {
+                height: 70px;
+
+                &:nth-child(-n+2) {
+                    width: 81px;
+                }
+                &:nth-child(3) {
+                    width: 146px;
+                }
+                &:nth-child(4) {
+                    width: 144px;
+                }
+            }
         }
     }
 }

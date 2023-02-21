@@ -24,7 +24,8 @@
     .companies {
         display: flex;
         column-gap: 30px;
-        margin-bottom: 50px;
+        max-width: 760px;
+        margin: 0 auto 50px;
 
         .company-card {
             background-color: white;
@@ -59,7 +60,8 @@
             margin-bottom: 20px;
         }
         .companies {
-            margin-bottom: 40px;
+            margin: 0 0 40px;
+            
             .company-card {
                 min-height: 270px;
                 padding: 21px 21px 14px;
