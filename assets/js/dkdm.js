@@ -58,34 +58,24 @@ document.addEventListener('DOMContentLoaded', function() {
     let marginLeft = imgbox.getBoundingClientRect().left
 
     const techSplide = $('.tech__splide')
-    const techSplideTrack =$('.tech__splide-track')
+    const techSplideTrack = $('.tech__splide-track')
     const techSplideList = $('.tech__items')
 
-    const splide = new Splide( '.splide', {
+    const splide = new Splide( '.tech__splide', {
         autoWidth: true,
         gap: 11,
         arrows: false,
         padding: marginLeft,
-        pagination: false,
-        mediaQuery: 'min',
-        breakpoints: {
-            767: {
-                destroy: true
-            }
-        }
+        pagination: false
     })
 
     if (matchMedia("(max-width: 767px)").matches) {
         if (!techSplide.hasClass('splide')) {
-            techSplide.addClass('splide')
-            techSplideTrack.addClass('splide__track')
-            techSplideList.addClass('splide__list')
+            addingSliderClasses()
         }
         splide.mount()
     } else {
-        techSplide.removeClass('splide')
-        techSplideTrack.removeClass('splide__track')
-        techSplideList.removeClass('splide__list')
+        removingSliderClasses()
     }
 
     $(window).on('resize', function() {
@@ -97,6 +87,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     })
+
+    function addingSliderClasses() {
+        techSplide.addClass('splide')
+        techSplideTrack.addClass('splide__track')
+        techSplideList.addClass('splide__list')
+    }
+
+    function removingSliderClasses() {
+        techSplide.removeClass('splide')
+        techSplideTrack.removeClass('splide__track')
+        techSplideList.removeClass('splide__list')
+    }
 
     const facts_slider = tns({
         container: '.facts__slider',
