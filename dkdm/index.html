@@ -101,13 +101,17 @@
                     <p class="block-description">Соберем более 15 коммерчески обоснованных работ в портфолио для старта на фрилансе</p>
                 </div>
             </div>
-            <div id="portfolio-slider" class="portfolio__slider">
-                <img src="../assets/img/dkdm/portfolio1.png" alt="1">
-                <img src="../assets/img/dkdm/portfolio2.png" alt="2">
-                <img src="../assets/img/dkdm/portfolio3.png" alt="3">
-                <img src="../assets/img/dkdm/portfolio4.png" alt="4">
-                <img src="../assets/img/dkdm/portfolio5.png" alt="5">   
-                <img src="../assets/img/dkdm/portfolio6.png" alt="6">
+            <div id="portfolio-slider" class="splide">
+                <div class="splide__track">
+                    <div id="portfolio-slider" class="portfolio__slider splide__list">
+                        <img class="splide__slide" src="../assets/img/dkdm/portfolio1.png" alt="1">
+                        <img class="splide__slide" src="../assets/img/dkdm/portfolio2.png" alt="2">
+                        <img class="splide__slide" src="../assets/img/dkdm/portfolio3.png" alt="3">
+                        <img class="splide__slide" src="../assets/img/dkdm/portfolio4.png" alt="4">
+                        <img class="splide__slide" src="../assets/img/dkdm/portfolio5.png" alt="5">   
+                        <img class="splide__slide" src="../assets/img/dkdm/portfolio6.png" alt="6">
+                    </div>
+                </div>
             </div>
             <div class="wrapper">
                 <a href="#signup" class="button red-btn">Записаться на курс</a>
@@ -167,9 +171,13 @@
                 <h2 class="block-title">Научимся оформлять товар под любой праздник</h2>
                 <p class="block-description">8 марта, Хэллоуин, Новый год и т.д.</p>
             </div>
-            <div class="party__imgs party__slider">
-                <img class="party__img1" src="../assets/img/dkdm/party1.png" alt="1">
-                <img class="party__img2" src="../assets/img/dkdm/party2.png" alt="2">
+            <div class="splide party__splide" id="party-slider">
+                <div class="splide__track party__track">
+                    <div class="party__imgs party__slider splide__list">
+                        <img class="party__img1 splide__slide" src="../assets/img/dkdm/party1.png" alt="1">
+                        <img class="party__img2 splide__slide" src="../assets/img/dkdm/party2.png" alt="2">
+                    </div>
+                </div>
             </div>
             <div class="wrapper">
                 <div class="party__content">

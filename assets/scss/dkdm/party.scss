@@ -1,26 +1,28 @@
 .party {
-    &__imgs {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 55px;
-        max-width: 760px;
-        margin-left: auto;
-        margin-right: auto;
+        .party__imgs {
+            display: flex !important;
+            justify-content: center !important;
+            margin-bottom: 55px !important;
+            max-width: 760px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+    
+            img {
+                object-fit: contain;
+                display: flex;
+                align-self: flex-start;
+            }
 
-        img {
-            object-fit: contain;
-            display: flex;
-            align-self: flex-start;
+            .party__img1 {
+                margin-top: 115px;
+                margin-right: -55px;
+            }
+            .party__img2 {
+                filter: drop-shadow(-20px 40px 50px rgba(0, 24, 84, 0.15));
+            }
         }
-    }
 
-    &__img1 {
-        margin-top: 115px;
-        margin-right: -55px;
-    }
-    &__img2 {
-        filter: drop-shadow(-20px 40px 50px rgba(0, 24, 84, 0.15));
-    }
+    
 
     .button {
         margin: 0 auto;

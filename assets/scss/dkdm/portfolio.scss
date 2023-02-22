@@ -1,8 +1,11 @@
 .portfolio {
     margin-top: 80px;
 
-    &__slider {
+    .splide {
         margin-bottom: 50px;
+    }
+
+    &__slider {
 
         img {
             cursor: grab;

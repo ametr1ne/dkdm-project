@@ -394,7 +394,7 @@ section {
 .portfolio {
   margin-top: 80px;
 }
-.portfolio__slider {
+.portfolio .splide {
   margin-bottom: 50px;
 }
 .portfolio__slider img {
@@ -556,24 +556,24 @@ section {
   }
 }
 
-.party__imgs {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 55px;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
+.party .party__imgs {
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 55px !important;
+  max-width: 760px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
-.party__imgs img {
+.party .party__imgs img {
   object-fit: contain;
   display: flex;
   align-self: flex-start;
 }
-.party__img1 {
+.party .party__imgs .party__img1 {
   margin-top: 115px;
   margin-right: -55px;
 }
-.party__img2 {
+.party .party__imgs .party__img2 {
   filter: drop-shadow(-20px 40px 50px rgba(0, 24, 84, 0.15));
 }
 .party .button {
