@@ -1,11 +1,8 @@
 .portfolio {
     margin-top: 80px;
 
-    .splide {
-        margin-bottom: 50px;
-    }
-
     &__slider {
+        margin-bottom: 50px;
 
         img {
             cursor: grab;
@@ -14,5 +11,11 @@
 
     .button {
         margin: 0 auto;
+    }
+
+    @media (max-width: 767px) {
+        &__slider {
+            margin-bottom: 40px;
+        }
     }
 }

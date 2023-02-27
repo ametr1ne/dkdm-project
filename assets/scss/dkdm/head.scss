@@ -69,7 +69,7 @@
     }
 
     &__title {
-        font-family: 'Dela Gothic One', cursive;
+        font-family: 'Dela Gothic One', sans-serif;
         color: white;
         font-weight: 400;
         font-size: 55px;
@@ -114,6 +114,7 @@
             font-size: 32px;
             line-height: 34px;
             margin-bottom: 26px;
+            max-width: 320px;
         }
 
         &__dot {
@@ -125,7 +126,7 @@
         }
 
         &__star {
-            width: 1000px;
+            width: 900px;
         }
 
         &__imgs {
@@ -160,7 +161,7 @@
         }
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 380px) {
         &__star {
             width: 756px;
             top: -20%;

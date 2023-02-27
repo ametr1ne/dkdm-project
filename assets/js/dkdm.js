@@ -16,32 +16,15 @@ for(i=1;i<=10;i++){
 
 // portfolio slider
 
-// const slider = tns({
-//     container: '.portfolio__slider',
-//     items: 3,
-//     gutter: 20,
-//     center: true,
-//     preventScrollOnTouch: 'auto',
-//     controls: false,
-//     mouseDrag: true,
-//     responsive: {
-//         320: {
-//             fixedWidth: 280
-//         },
-//         767: {
-//             fixedWidth: 400
-//         }
-//     }
-// });
-
-const portfolioSlider = new Splide( '#portfolio-slider', {
-    type: 'loop',
-    gap: 20,
-    arrows: false,
-    pagination: false,
-    mediaQuery: 'min',
-    focus: 'center',
-    breakpoints: {
+const slider = tns({
+    container: '.portfolio__slider',
+    items: 3,
+    gutter: 20,
+    center: true,
+    preventScrollOnTouch: 'auto',
+    controls: false,
+    mouseDrag: true,
+    responsive: {
         320: {
             fixedWidth: 280
         },
@@ -49,40 +32,27 @@ const portfolioSlider = new Splide( '#portfolio-slider', {
             fixedWidth: 400
         }
     }
-}).mount()
+});
 
 // party slider
 
 document.addEventListener('DOMContentLoaded', function() {
-    // const parties = tns({
-    //     container: '.party__slider',
-    //     mouseDrag: true,
-    //     gutter: 20,
-    //     controls: false,
-    //     preventScrollOnTouch: 'auto',
-    //     center: true,
-    //     loop: false,
-    //     fixedWidth: 280,
-    //     nav: false,
-    //     responsive: {
-    //         767: {
-    //             disable: true
-    //         }
-    //     }
-    // });
-
-    const partySlider = new Splide( '#party-slider', {
-        gap: 20,
-        arrows: false,
-        pagination: false,
-        mediaQuery: 'min',
-        focus: 'center',
-        breakpoints: {
+    const parties = tns({
+        container: '.party__slider',
+        mouseDrag: true,
+        gutter: 20,
+        controls: false,
+        preventScrollOnTouch: 'auto',
+        center: true,
+        loop: false,
+        fixedWidth: 280,
+        nav: false,
+        responsive: {
             767: {
-                destroy: true
+                disable: true
             }
         }
-    }).mount()
+    });
 
     const imgbox = document.querySelector('.tech__imgbox')
 
@@ -91,10 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const techSplide = $('.tech__splide')
     const techSplideTrack = $('.tech__splide-track')
     const techSplideList = $('.tech__items')
-
-    const partySplide = $('.party__splide')
-    const partySplideTrack = $('.party__track')
-    const partySplideList = $('.party__imgs')
 
     const splide = new Splide( '.tech__splide', {
         autoWidth: true,
@@ -127,20 +93,12 @@ document.addEventListener('DOMContentLoaded', function() {
         techSplide.addClass('splide')
         techSplideTrack.addClass('splide__track')
         techSplideList.addClass('splide__list')
-
-        partySplide.addClass('splide')
-        partySplideTrack.addClass('splide__track')
-        partySplideList.addClass('splide__list')
     }
 
     function removingSliderClasses() {
         techSplide.removeClass('splide')
         techSplideTrack.removeClass('splide__track')
         techSplideList.removeClass('splide__list')
-
-        partySplide.removeClass('splide')
-        partySplideTrack.removeClass('splide__track')
-        partySplideList.removeClass('splide__list')
     }
 
     const facts_slider = tns({
@@ -220,8 +178,6 @@ function formHandler(id, url) {
             $(id).find('.submit-btn').text('Отправить')
         },
         success: function (res) {
-            const data = JSON.parse(res)
-            console.log(data);
             formSubmitted(id)
         }
     });
@@ -312,8 +268,8 @@ $(document).ready(function () {
 // interactive block
 
 $('.tech-item').on('click', function() {
-    $(this).addClass('tech-item--active')
-    $(this).siblings().removeClass('tech-item--active')
+    $(this).toggleClass('tech-item--active')
+    // $(this).siblings().removeClass('tech-item--active')
 
     const order = $(this).attr('data-order')
     $('.img-' + order).toggleClass('img_visible')
@@ -341,7 +297,7 @@ $(document).ready(function(){
             'by',
             'ua'
         ],
-        utilsScript: 'http://127.0.0.1:5500/assets/js/int_tel_input/build/js/utils.js',
+        utilsScript: 'http://m9124487.beget.tech/sharipov/dkdm-project/assets/js/int_tel_input/build/js/utils.js',
         autoPlaceholder: 'aggressive',
         nationalMode: false
     })
