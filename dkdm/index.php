@@ -52,7 +52,21 @@
                         <img src="../assets/img/dkdm/figma-round.png" alt="yodiz">
                     </div>
                     <h1 class="head__title">Дизайн карточек для маркетплейсов</h1>
-                    <p>Старт <span class="head__dot"></span> 27 февраля, 20:00 мск</p>
+                    <?php $date = '2023-02-27 21:00';
+                    $dateStart = date('U', strtotime($date));
+                    $arr = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+                    $month = date('n', $dateStart) - 1;
+
+                    if ($dateStart < date('U')) {
+                        while ($dateStart < date('U')) {
+                            $dateStart = strtotime("+14 days", $dateStart);
+                            $month = date('n', $dateStart) - 1;
+                            $date = date("j $arr[$month] 20:00 мск", $dateStart);
+                        }
+                    } else {
+                        $date = date("j $arr[$month] 20:00 мск", $dateStart);
+                    } ?>
+                    <p>Старт <span class="head__dot"></span><?= date("$date") ?></p>
                     <a href="#signup" class="button red-btn">Записаться на курс</a>
                     <div class="head__cards">
                         <img class="head__card head__card_card1 desktop" src="../assets/img/dkdm/head-card2.png" alt="card2">
@@ -513,29 +527,29 @@
                 <div class="singup__content">
                     <h2 class="block-title signup__block-title">Записаться на курс</h2>
                     <?php
-                        $dateFinish = '2023-02-27 23:00:00';
+                        // $dateFinish = '2023-02-27 23:00:00';
 
-                        $dateEnd = date("U", strtotime($dateFinish));
+                        // $dateEnd = date("U", strtotime($dateFinish));
 
-                        if ($dateEnd < date("U")) {
-                            while ($dateEnd < date("U")) {
-                                $dateEnd = strtotime("+1 days", $dateEnd);
-                            }
-                        }
-                        $diff = $dateEnd - date("U");
+                        // if ($dateEnd < date("U")) {
+                        //     while ($dateEnd < date("U")) {
+                        //         $dateEnd = strtotime("+1 days", $dateEnd);
+                        //     }
+                        // }
+                        // $diff = $dateEnd - date("U");
                     ?>
-                    <p class="block-description signup__block-description">Предстартовая скидка 40% закроется через 
+                    <!-- <p class="block-description signup__block-description">Предстартовая скидка 40% закроется через 
                         <strong id="timer" data-diff="<?= date($diff) ?>"><span class='timer__days'>00</span> <span class='timer__text'></span>, 
                         <span class='timer__hours'>00</span>:<span class='timer__minutes'>00</span>:<span class='timer__seconds'>00</span></strong>
-                    </p>
+                    </p> -->
                     <div class="form-wrap">
                         <p class="form-wrap__title">Выберите тариф</p>
                         <form class="form" id="form">
                             <div class="tariffes">
                                 <label>
-                                    <input value="9900" class="tariff1-radio" type="radio" name="price" id="tariff1" aria-describedby="error-price">
+                                    <input value="16500" class="tariff1-radio" type="radio" name="price" id="tariff1" aria-describedby="error-price">
                                     <div class="tariff">
-                                        <div class="sale-chip">40%</div>
+                                        <!-- <div class="sale-chip">40%</div> -->
                                         <div class="tariff__radio-block">
                                             <div class="fake-radio"></div>
                                         </div>
@@ -546,16 +560,16 @@
                                         <div class="tariff__price-block tariff-block">
                                             <span class="footnote">Стоимость</span>
                                             <div class="prices">
-                                                <p class="old-price">16 500 руб.</p>
-                                                <p class="price">9 900 руб.</p>
+                                                <!-- <p class="old-price">16 500 руб.</p> -->
+                                                <p class="price">16 500 руб.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </label>
                                 <label>
-                                    <input value="14100" class="tariff1-radio" type="radio" name="price" id="tariff2" aria-describedby="error-price">
+                                    <input value="23500" class="tariff1-radio" type="radio" name="price" id="tariff2" aria-describedby="error-price">
                                     <div class="tariff">
-                                        <div class="sale-chip">40%</div>
+                                        <!-- <div class="sale-chip">40%</div> -->
                                         <div class="tariff__radio-block">
                                             <div class="fake-radio"></div>
                                         </div>
@@ -566,16 +580,16 @@
                                         <div class="tariff__price-block tariff-block">
                                             <span class="footnote">Стоимость</span>
                                             <div class="prices">
-                                                <p class="old-price">23 500 руб.</p>
-                                                <p class="price">14 100 руб.</p>
+                                                <!-- <p class="old-price">23 500 руб.</p> -->
+                                                <p class="price">23 500 руб.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </label>
                                 <label>
-                                    <input value="39900" class="tariff1-radio" type="radio" name="price" id="tariff3" aria-describedby="error-price">
+                                    <input value="66500" class="tariff1-radio" type="radio" name="price" id="tariff3" aria-describedby="error-price">
                                     <div class="tariff">
-                                        <div class="sale-chip">40%</div>
+                                        <!-- <div class="sale-chip">40%</div> -->
                                         <div class="tariff__radio-block">
                                             <div class="fake-radio"></div>
                                         </div>
@@ -586,8 +600,8 @@
                                         <div class="tariff__price-block tariff-block">
                                             <span class="footnote">Стоимость</span>
                                             <div class="prices">
-                                                <p class="old-price">66 500 руб.</p>
-                                                <p class="price">39 900 руб.</p>
+                                                <!-- <p class="old-price">66 500 руб.</p> -->
+                                                <p class="price">66 500 руб.</p>
                                             </div>
                                         </div>
                                     </div>
