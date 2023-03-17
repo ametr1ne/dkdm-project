@@ -527,81 +527,81 @@
                 <div class="singup__content">
                     <h2 class="block-title signup__block-title">Записаться на курс</h2>
                     <?php
-                        // $dateFinish = '2023-02-27 23:00:00';
+                        $dateFinish = '2023-03-18 23:00:00';
 
-                        // $dateEnd = date("U", strtotime($dateFinish));
+                        $dateEnd = date("U", strtotime($dateFinish));
 
-                        // if ($dateEnd < date("U")) {
-                        //     while ($dateEnd < date("U")) {
-                        //         $dateEnd = strtotime("+1 days", $dateEnd);
-                        //     }
-                        // }
-                        // $diff = $dateEnd - date("U");
+                        if ($dateEnd < date("U")) {
+                            while ($dateEnd < date("U")) {
+                                $dateEnd = strtotime("+2 days", $dateEnd);
+                            }
+                        }
+                        $diff = $dateEnd - date("U");
                     ?>
-                    <!-- <p class="block-description signup__block-description">Предстартовая скидка 40% закроется через 
+                    <p class="block-description signup__block-description">Предстартовая скидка 40% закроется через 
                         <strong id="timer" data-diff="<?= date($diff) ?>"><span class='timer__days'>00</span> <span class='timer__text'></span>, 
                         <span class='timer__hours'>00</span>:<span class='timer__minutes'>00</span>:<span class='timer__seconds'>00</span></strong>
-                    </p> -->
+                    </p>
                     <div class="form-wrap">
                         <p class="form-wrap__title">Выберите тариф</p>
                         <form class="form" id="form">
                             <div class="tariffes">
                                 <label>
-                                    <input value="16500" class="tariff1-radio" type="radio" name="price" id="tariff1" aria-describedby="error-price">
+                                    <input value="9900" class="tariff1-radio" type="radio" name="price" id="tariff1" aria-describedby="error-price">
                                     <div class="tariff">
-                                        <!-- <div class="sale-chip">40%</div> -->
+                                        <div class="sale-chip">40%</div>
                                         <div class="tariff__radio-block">
                                             <div class="fake-radio"></div>
                                         </div>
-                                        <div class="tariff__title-block tariff-block">
+                                        <div class="tariff__title-block tariff-block" style="margin-right: 55px;">
                                             <span class="footnote">4 недели</span>
                                             <p>Самостоятельное обучение</p>
                                         </div>
                                         <div class="tariff__price-block tariff-block">
                                             <span class="footnote">Стоимость</span>
                                             <div class="prices">
-                                                <!-- <p class="old-price">16 500 руб.</p> -->
-                                                <p class="price">16 500 руб.</p>
+                                                <p class="old-price">16 500 руб.</p>
+                                                <p class="price">9 900 руб.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </label>
                                 <label>
-                                    <input value="23500" class="tariff1-radio" type="radio" name="price" id="tariff2" aria-describedby="error-price">
+                                    <input value="14100" class="tariff1-radio" type="radio" name="price" id="tariff2" aria-describedby="error-price">
                                     <div class="tariff">
-                                        <!-- <div class="sale-chip">40%</div> -->
+                                        <div class="sale-chip">40%</div>
                                         <div class="tariff__radio-block">
                                             <div class="fake-radio"></div>
                                         </div>
-                                        <div class="tariff__title-block tariff-block">
+                                        <div class="tariff__title-block tariff-block" style="margin-right: 55px;">
                                             <span class="footnote">4 недели <span class="chip">Хит продаж</span></span>
                                             <p>С разбором курсовой работы</p>
                                         </div>
                                         <div class="tariff__price-block tariff-block">
                                             <span class="footnote">Стоимость</span>
                                             <div class="prices">
-                                                <!-- <p class="old-price">23 500 руб.</p> -->
-                                                <p class="price">23 500 руб.</p>
+                                                <p class="old-price">23 500 руб.</p>
+                                                <p class="price">14 100 руб.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </label>
                                 <label>
-                                    <input value="66500" class="tariff1-radio" type="radio" name="price" id="tariff3" aria-describedby="error-price">
+                                    <input value="39900" class="tariff1-radio" type="radio" name="price" id="tariff3" aria-describedby="error-price">
                                     <div class="tariff">
-                                        <!-- <div class="sale-chip">40%</div> -->
+                                        <div class="sale-chip">40%</div>
                                         <div class="tariff__radio-block">
                                             <div class="fake-radio"></div>
                                         </div>
-                                        <div class="tariff__title-block tariff-block">
+                                        <div class="tariff__title-block tariff-block" style="margin-right: 55px;">
                                             <span class="footnote">4 недели</span>
                                             <p>С разбором всех 15 работ курса</p>
                                         </div>
                                         <div class="tariff__price-block tariff-block">
                                             <span class="footnote">Стоимость</span>
                                             <div class="prices">
-                                                <!-- <p class="old-price">66 500 руб.</p> -->
-                                                <p class="price">66 500 руб.</p>
+                                                <p class="old-price">66 500 руб.</p>
+                                                <p class="price">39 900 руб.</p>
                                             </div>
                                         </div>
                                     </div>
