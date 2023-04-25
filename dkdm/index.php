@@ -607,6 +607,12 @@
                                     </div>
                                 </label>
                                 <span class="error" id="error-price"></span>
+                                <input type="hidden" hidden name="utm_campaign"
+                                   value="<?= ($_GET['utm_campaign']) ? $_GET['utm_campaign'] : '' ?>">
+                                <input type="hidden" hidden name="utm_content"
+                                   value="<?= ($_GET['utm_content']) ? $_GET['utm_content'] : '' ?>">
+                                <input type="hidden" hidden name="utm_source"
+                                   value="<?= ($_GET['utm_source']) ? $_GET['utm_source'] : '' ?>">
                             </div>
                             <div class="contact-data">
                                 <div class="input-wrap">
